@@ -4,6 +4,7 @@ import './pages.css';
 
 import image1 from "./images/comminutyWork.png"
 
+
 function Home() {
   return (
     <>
@@ -23,11 +24,11 @@ function Home() {
       might just be able to fix it ourselves.
         </p>
        
-        <ul> <li> <Link to="/SignUp" className="button"> SignUP</Link> </li></ul>
+      <li> <Link to="/SignUp" className="button"> Get Started</Link> </li>
         </div>
 
 <div className="images">
-        <img src={image1} alt="heloo" />    
+        <img src={image1} alt="Logo" />    
         </div>
       
       

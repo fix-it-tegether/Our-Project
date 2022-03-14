@@ -46,6 +46,7 @@ form {
     border-radius: 13px;
     border-style:outset;
     margin-bottom: 30px;
+    margin-top: 80px;
   }
   .form .col{
     display: flex;
@@ -148,6 +149,8 @@ form {
 background-color: #fff;
 border-top: 1px solid #322081;
 font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* margin-bottom: -1000px; */
+/* height: 10px; */
 }
 .row{
     display: flex;

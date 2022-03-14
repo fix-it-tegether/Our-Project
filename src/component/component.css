@@ -15,14 +15,28 @@
    
 }
 
-a{
+.nav .logo{
     text-decoration: none; 
+    font-size: 20px;
+   font-weight: 600;
+   display: none;
+   
     
-  
+
+}
+/* .nav img{
+    width: 450px;
+    height: auto;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 0;
+} */
+a{
+    text-decoration: none;
 }
 
 .Header{
-    background: rgb(233, 233, 233);
+    /* background: rgb(233, 233, 233); */
     padding: 15px 0px 15px 0px;
     width: 100%;
     margin:0;
@@ -36,6 +50,7 @@ a{
    width: 85%;
    margin: auto;
    justify-content: space-between;
+   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   
 }
 

@@ -12,7 +12,8 @@ import Login from '../pages/Login';
 import About from '../pages/About';
 import data from "../data.js"
 import SignUp from '../pages/SignUp';
-
+import Posts from '../pages/Posts';
+import PrivateRoute from './PrivateRoute';
 
 function Body() {
 
@@ -44,15 +45,18 @@ function Body() {
            <About/>
         </Route>
 
+        <PrivateRoute path="/Posts">
+           <Posts />
+        </PrivateRoute>
+
         <Route path="/">
            <Home />
         </Route>
-
         
 
         </Switch>
 
-           <Footer />
+        <Footer />
             
         
 
