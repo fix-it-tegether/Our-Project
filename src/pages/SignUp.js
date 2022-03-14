@@ -11,15 +11,17 @@ import {
   faGithub
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope,faUser,faLoock, faLock} from "@fortawesome/free-solid-svg-icons";
+import axios from 'axios';
+
 function SignUp(){
 //State That stores tha values of inputs
 const initialFormState= {
-  firstName:"",
-  lastName:"",
-  userName:"",
+  first_name:"",
+  last_name:"",
+  username:"",
   password:"",
   email:"",
-  zipCode:"",
+  zipcode:"",
   state:"",
   city:""
 }
@@ -32,19 +34,35 @@ const handleChange = (event) => {
   handleValidationChange(event)
   setFormState(inputData)
 }
-console.log(formState)
-//HandleSubmit Function
-// const handlesubmit = (event) => {
-// event.preventDefault()
-// }
+// console.log(formState)
+
+// HandleSubmit Function
+const handlesubmit = (event) => {
+event.preventDefault();
+console.log("formState", formState)
+axios.post("https://fixittogether.herokuapp.com/api/auth/register", formState)
+.then((res) => {
+  console.log(res.data)
+
+  setFormState(initialFormState)
+ 
+   alert("You have Successfully Registered")
+ 
+})
+.catch((err) => console.log(err))
+}
+
+
 //Form Validation Using YUP
 let schema = yup.object().shape({
-  firstName: yup.string().required("Cannot be Blank"),
-  lastName: yup.string().required("Cannot be Blank"),
-  userName: yup.string().email("Cannot be Blank").required(),
-  password: yup.string().required(),
-  email: yup.string().email("Cannot be Blank").required(),
-  zipCode: yup.string().required("Cannot be Blank"),
+  
+
+  first_name: yup.string().required("Cannot be Blank"),
+  last_name: yup.string().required("Cannot be Blank"),
+  username: yup.string().required("Cannot be Blank"),
+  password: yup.string().required("Cannot be Blank"),
+  email: yup.string().email().required("Cannot be Blank"),
+  zipcode: yup.string().required("Cannot be Blank"),
   state: yup.string().required("Cannot be Blank"),
   city: yup.string().required("Cannot be Blank")
 });
@@ -62,38 +80,45 @@ yup
   }
     return(
         <div className='form'>
-            <form>
+            <form onSubmit={handlesubmit}>
             <h3>Signup Your Account !!!</h3>
-            <div className='col'>
-            <label>
+            
+
+                      
+
+           <div className='col'>
+           <label>
             <input type="text" placeholder='First Name'
-            name="firstName"
-            value={formState.firstName}
+            name="first_name"
+            value={formState.first_name}
             onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.firstName}</p> : null}
-            </label>
+            {errors.first_name.length > 0 ? <p className="errors">{errors.first_name}</p> : null}
+           </label>
+            
             <label>
             <input type="text" placeholder='Last Name'
-             name="lastName"
-             value={formState.lastName}
+             name="last_name"
+             value={formState.last_name}
              onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.lastName}</p> : null}
+            {errors.last_name.length > 0 ? <p className="errors">{errors.last_name}</p> : null}
             </label>
                       </div>
+
                       <div className='col'>
                         <label>
             <input type="text" placeholder='Username'
-             name="userName"
-             value={formState.userName}
+             name="username"
+             value={formState.username}
              onChange={handleChange}
             >
                </input>
-               {errors.firstName.length > 0 ? <p className="errors">{errors.userName}</p> : null}
+               {errors.username.length > 0 ? <p className="errors">{errors.username}</p> : null}
                </label>
+
                <label>
             <input type="password" placeholder='Password'
              name="password"
@@ -101,48 +126,55 @@ yup
              onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.password}</p> : null}
+            {errors.password.length > 0 ? <p className="errors">{errors.password}</p> : null}
             </label>
            </div>
+
          <div className='col'>
-         <label>
+        <label>
             <input type="email" placeholder='Email'
              name="email"
              value={formState.email}
              onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.email}</p> : null}
+            {errors.email.length > 0 ? <p className="errors">{errors.email}</p> : null}
             </label>
-            <label>
+           
+           <label>
+
             <input type="number" placeholder='Zip Code'
-             name="zipCode"
-             value={formState.zipCode}
+             name="zipcode"
+             value={formState.zipcode}
              onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.zipCode}</p> : null}
+            {errors.zipcode.length > 0 ? <p className="errors">{errors.zipcode}</p> : null}
             </label>
+            
             </div>
             <div className='col'>
-              <label>
+           
+           <label>
             <input type="text" placeholder='State'
              name="state"
              value={formState.state}
              onChange={handleChange}
             >
                </input>
-               {errors.firstName.length > 0 ? <p className="errors">{errors.state}</p> : null}
+               {errors.state.length > 0 ? <p className="errors">{errors.state}</p> : null}
                </label>
-               <label>
+
+              <label>
             <input type="text" placeholder='City'
              name="city"
              value={formState.city}
              onChange={handleChange}
             >
             </input>
-            {errors.firstName.length > 0 ? <p className="errors">{errors.city}</p> : null}
+            {errors.city.length > 0 ? <p className="errors">{errors.city}</p> : null}
             </label>
+            
             </div>
             <button >Sign Up</button>
             <div className='already'>

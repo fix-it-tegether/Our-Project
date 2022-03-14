@@ -20,9 +20,17 @@
     font-size: 20px;
    font-weight: 600;
    display: none;
+   
     
 
 }
+/* .nav img{
+    width: 450px;
+    height: auto;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 0;
+} */
 a{
     text-decoration: none;
 }
