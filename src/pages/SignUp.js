@@ -12,6 +12,7 @@ import {
 } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope,faUser,faLoock, faLock} from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 function SignUp(){
 //State That stores tha values of inputs
@@ -25,6 +26,7 @@ const initialFormState= {
   state:"",
   city:""
 }
+
 const [formState, setFormState] = useState(initialFormState);
 const [errors, setErrors] = useState(initialFormState);
 //HandleChange Function
@@ -37,6 +39,9 @@ const handleChange = (event) => {
 // console.log(formState)
 
 // HandleSubmit Function
+
+const history = useHistory()
+
 const handlesubmit = (event) => {
 event.preventDefault();
 console.log("formState", formState)
@@ -45,6 +50,8 @@ axios.post("https://fixittogether.herokuapp.com/api/auth/register", formState)
   console.log(res.data)
 
   setFormState(initialFormState)
+  }).then(() => {
+    history.push("/Login")
  
    alert("You have Successfully Registered")
  

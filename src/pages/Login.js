@@ -12,6 +12,8 @@ import {
 // import {useDispatch} from 'react-redux';
 // import {LoginUser} from "../Store/ProblemActions";
 import axios from 'axios';
+import { useHistory } from 'react-router-dom';
+
 const SignIn = () => {
 
   // const dispatch = useDispatch();
@@ -39,6 +41,7 @@ const SignIn = () => {
 
 //HandleSubmit Function
 
+const history = useHistory()
 const handleSubmit = (event) =>{
 event.preventDefault();
 
@@ -50,10 +53,11 @@ axios.post("https://fixittogether.herokuapp.com/api/auth/login", loginState)
             console.log("res", res)
           
                localStorage.setItem( "token", res.data.token);
+               localStorage.setItem( "username", loginState.username);
+               
+          }).then(() => {
+            history.push("/Body")
           })
-
-
-
 }
 
     return(

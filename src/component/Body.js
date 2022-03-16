@@ -14,7 +14,7 @@ import data from "../data.js"
 import SignUp from '../pages/SignUp';
 import Posts from '../pages/Posts';
 import PrivateRoute from './PrivateRoute';
-
+import Profile from '../pages/Profile';
 function Body() {
 
     const [books, setBooks] = useState(data);
@@ -47,6 +47,10 @@ function Body() {
 
         <PrivateRoute path="/Posts">
            <Posts />
+        </PrivateRoute>
+
+        <PrivateRoute path="/Profile">
+           <Profile />
         </PrivateRoute>
 
         <Route path="/">

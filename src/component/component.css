@@ -13,7 +13,12 @@
    
     list-style: none;
    
+   
 }
+.activeLink{
+    color: red;
+}
+
 
 .nav .logo{
     text-decoration: none; 
@@ -44,16 +49,22 @@ a{
     
 }
 
-.nav{
+.Header .nav{
    display: flex; 
    align-items: center;
+   font-weight:500;
    width: 85%;
    margin: auto;
    justify-content: space-between;
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  
+   color: #322081;
 }
-
+.Header .userNav{
+    float: right;
+    margin-right: 25px;
+    font-weight: 500;
+    color:#322081 ;
+}
 
 /* cat css */
 
