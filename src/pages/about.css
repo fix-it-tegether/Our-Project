@@ -1,8 +1,6 @@
 
 
-body{
-    
-}
+
 
 .aboutContainer{
 
@@ -29,4 +27,19 @@ font-weight:500;
 
     width: 50%;
 
+}
+/* media querry */
+
+@media(max-width: 910px){
+
+    .aboutContainer{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .aboutContainer img{
+
+        width: 0%;
+    
+    }
 }

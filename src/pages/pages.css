@@ -4,12 +4,15 @@ main{
     width: 82%;
     height: 30rem;
     margin: auto;
+   
 }
+
 
 
 .container{
    display: flex; 
    align-items: center;
+   
    
 }
 .container h1{
@@ -23,7 +26,10 @@ width: 100%;
 }
 
 .images img{
-width: 100%;}
+    width: 100%;
+   
+
+  }
 
 .description{
 
@@ -40,6 +46,21 @@ font-size: 18px;
    line-height:50px ;
    padding-right:20px ;
    color: white;
+
+}
+
+
+@media(max-width: 970px){
+
+
+    .container{
+        display: flex; 
+       flex-direction: column;
+      
+    }
+    .images img{
+        display: none;
+    }
 
 }
 
