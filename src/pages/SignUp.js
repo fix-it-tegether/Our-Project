@@ -40,20 +40,28 @@ const handleChange = (event) => {
 
 // HandleSubmit Function
 
-const history = useHistory()
+const history = useHistory();
 
 const handlesubmit = (event) => {
 event.preventDefault();
-console.log("formState", formState)
+
 axios.post("https://fixittogether.herokuapp.com/api/auth/register", formState)
 .then((res) => {
-  console.log(res.data)
+  
+  
 
   setFormState(initialFormState)
+  alert("You have Successfully Registered")
+  localStorage.setItem( "username", formState.username);
+  localStorage.setItem( "zipcode", formState.zipcode);
+  localStorage.setItem( "state", formState.state);
+  localStorage.setItem( "city", formState.city);
+  localStorage.setItem( "id" );
+  
   }).then(() => {
     history.push("/Login")
  
-   alert("You have Successfully Registered")
+  
  
 })
 .catch((err) => console.log(err))
@@ -89,9 +97,6 @@ yup
         <div className='form'>
             <form onSubmit={handlesubmit}>
             <h3>Signup Your Account !!!</h3>
-            
-
-                      
 
            <div className='col'>
            <label>

@@ -15,6 +15,7 @@ import SignUp from '../pages/SignUp';
 import Posts from '../pages/Posts';
 import PrivateRoute from './PrivateRoute';
 import Profile from '../pages/Profile';
+import AddNewPost from '../pages/AddNewPost';
 function Body() {
 
     const [books, setBooks] = useState(data);
@@ -52,6 +53,10 @@ function Body() {
         <PrivateRoute path="/Profile">
            <Profile />
         </PrivateRoute>
+
+        <Route path="/AddNewPost">
+           <AddNewPost />
+        </Route>
 
         <Route path="/">
            <Home />

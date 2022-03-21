@@ -1,0 +1,118 @@
+.posts{
+        position: relative;
+      background: #f0f2f5;
+     
+      width: 100%;
+      margin-bottom: 10px;
+     
+}
+
+.data{
+   
+    background: #fff;
+     display: flex;
+     flex-flow: column nowrap ;
+     justify-content: space-between;
+    flex-direction: column;
+    width: 750px;
+    height: auto;
+    margin-left: 20%; 
+    border: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    border-radius: 10px;
+    border-bottom: 10px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    
+}
+.data p, h3{
+    margin-left: 10px;
+    margin-bottom: 5px;
+} 
+.mine{
+    display: flex;
+   
+    background: #322081;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.mine .add{
+    cursor: pointer;
+  
+    padding: 0.5rem 1rem;
+    height: 30px;
+    outline: none;
+    border: none;
+    background-color: #fff;
+    width: 550px;
+    font-size: 1.15rem;
+    margin: 0.25rem;
+     border-radius:25px ;
+     margin-left: 20%;
+}
+.mine .add:hover{
+    background: #f0f2f5;
+}
+
+/*Add New Post Component Style*/
+.postForm{
+    background: #e5ebf5;
+    -webkit-box-shadow: 0 15px 30px rgba(5, 5, 5, 0.3);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-radius: 13px;
+    width: 750px;
+    align-items: center;
+    margin-left: 20%;
+    margin-top: 100px;
+    margin-bottom: 180px;
+   
+}
+.postForm h2{
+    text-align: center;
+}
+.postInput{
+    margin-top: 10px;
+}
+.postForm .postInput{
+
+    border:  px solid rgb(0, 0, 0);
+    padding: 0.5rem 1rem;
+    height: 30px;
+    outline: none;
+    border: none;
+   background: #fff;
+    width: 450px;
+    font-size: 1rem;
+    margin: 0.25rem;
+     border-radius:25px ;
+    
+}
+
+
+/* RESPONSIVE */
+@media(max-width: 813px){
+    .posts{
+        width: 350px;
+        
+    }
+    .mine .add{
+        width: 300px;
+        margin-left: 20px;
+    }
+    .data{
+        width: 250px;
+        margin-left: 20px;
+    }
+    .mainPost{
+        width:150px;
+        margin-left: 10px;
+
+    }
+
+}
+
+@media(max-width: 570px){
+    
+    
+}

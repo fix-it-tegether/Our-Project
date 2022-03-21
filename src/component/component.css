@@ -12,6 +12,9 @@
 .li{
    
     list-style: none;
+    padding: 10px 20px;
+    width: 75%;
+   
    
    
 }
@@ -27,6 +30,18 @@
    display: none;
    
     
+
+}
+.nav h2{
+    font-size:30px;
+}
+nav span{
+    color: red;
+}
+.mobileDesign{
+    background: none;
+    display: none;
+    /* display: none; */
 
 }
 /* .nav img{
@@ -57,7 +72,9 @@ a{
    margin: auto;
    justify-content: space-between;
    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-   color: #322081;
+
+   /* color: #fff; */
+   /* background: #322081; */
 }
 .Header .userNav{
     float: right;
@@ -75,5 +92,23 @@ a{
     flex-wrap: wrap;
   } */
   
-  
+  /* HeaderResponsive */
+  /* @media(max-width: 780px){
+    .li{
+          display: none;
+      }
+      .nav-links-mobile{
+          position: absolute;
+          display: block;
+          list-style: none;
+          background: #322081;
+          color:#fff;
+          left:0;
+          top:75px;
+          transition: all 0.5s ease-out;
+          width: 100%;
+
+
+      }
+  } */
   

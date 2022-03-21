@@ -18,10 +18,10 @@ function Home() {
         <div className="content">
         <h1>Working together as a Comminuty !</h1>
         <p className="description">
-              Nobody's going to fix the world for us, but
-      working together, making use of technological
-      innovations and human communities alike, we
-      might just be able to fix it ourselves.
+              Nobody's Going to Fix the World for us, but
+      Working Together, Making use of Technological
+      Innovations and Human Communities alike, we
+      might Just be Able to Fix it Ourselves.
         </p>
        
       <li> <Link to="/SignUp" className="button"> Get Started</Link> </li>

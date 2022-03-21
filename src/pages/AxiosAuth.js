@@ -1,9 +1,11 @@
 import axios from 'axios';
 import React from 'react'
 
+// export const postUrl = "";
 const axiosAuth = () => {
+
   let token = localStorage.getItem("token");
-  console.log(token);
+ 
   return axios.create({
     headers: {
       "Content-Type": "application/json",

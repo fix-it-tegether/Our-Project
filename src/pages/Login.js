@@ -50,12 +50,14 @@ event.preventDefault();
 
 axios.post("https://fixittogether.herokuapp.com/api/auth/login", loginState)
           .then((res) => {
-            console.log("res", res)
+            
           
                localStorage.setItem( "token", res.data.token);
-               localStorage.setItem( "username", loginState.username);
+             
+               alert("You have Successfully Logged In")
                
           }).then(() => {
+            
             history.push("/Body")
           })
 }
